@@ -89,7 +89,7 @@ Get Apikey zenz on [`zenz`](https://zenzapi.xyz/pricing)
 * [`CAF-ID`](https://github.com/CAF-ID)
 * [`bintang`](https://github.com/Bintangp02)
 * [`ArullOfc`](https://github.com/Warikrr)
-* [`Naze Dev`](https://github.com/Maxxy-Md)
+* [`Maxxy-Md`](https://github.com/Maxxy-Md)
 
 ```Thanks to all who have participated in the development of this script```
 
