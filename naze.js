@@ -2046,25 +2046,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-	    case 'ytmp3': case 'ytaudio': {
-                let { yta } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
-                let quality = args[1] ? args[1] : '128kbps'
-                let media = await yta(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                naze.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
-                naze.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
-            }
-            break
-            case 'ytmp4': case 'ytvideo': {
-                let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
-                let quality = args[1] ? args[1] : '360p'
-                let media = await ytv(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                naze.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
-            }
-            break
 	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
@@ -2558,6 +2539,37 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+  case 'tiktok': case 'tiktoknowm': {
+if (!text) throw 'Masukkan Query Link!'
+if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 5 // -5 limit    
+m.reply(mess.wait)
+let anu = await fetchJson(`https://malesin.xyz/tiktok?url=${text}`)
+let buttons = [
+{buttonId: `tiktokaudio ${text}`, buttonText: {displayText: 'AUDIO'}, type: 1}
+]
+let buttonMessage = {
+video: { url: anu.video },
+caption: `*Title:* ${anu.title}
+*Author:* ${anu.author}`,
+footer: `*Cara simpan digalery :*
+• Download videonya
+• Buka terus klik titik 3 pojok kanan atas
+• Lalu klik simpan!`,
+buttons: buttons,
+headerType: 4
+  }
+naze.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break  
+case 'tiktokaudio': {
+if (!text) throw 'Masukkan Query Link!'
+if (!isPremium && global.db.data.users[m.sender].limit < 3) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 3 // -5 limit    
+let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
+naze.sendMessage(m.chat, { audio: { url: anu.result.nowm }, mimetype: 'audio/mpeg'}, { quoted: msg })
+}
+break          
            /**case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
@@ -2576,24 +2588,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break**/
-            case 'tiktokmp3': case 'tiktokaudio': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
-                let buttons = [
-                    {buttonId: `allmenu`, buttonText: {displayText: '📖List Menu'}, type: 1},
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: `Download From ${text}`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 2
-                }
-                let msg = await naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-                naze.sendMessage(m.chat, { audio: { url: anu.result.nowm }, mimetype: 'audio/mpeg'}, { quoted: msg })
-            }
-            break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
