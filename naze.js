@@ -2548,8 +2548,8 @@ case 'tiktokaudio': {
 if (!text) throw 'Masukkan Query Link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 3) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 3 // -5 limit    
-let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
-naze.sendMessage(m.chat, { audio: { url: anu.result.nowm }, mimetype: 'audio/mpeg'}, { quoted: msg })
+let anu = await fetchJson(`https://malesin.xyz/tiktok?url=${text}`)
+naze.sendMessage(m.chat, { audio: { url: anu.video }, mimetype: 'audio/mpeg'}, { quoted: msg })
 }
 break          
            /**case 'tiktokwm': case 'tiktokwatermark': {
