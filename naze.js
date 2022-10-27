@@ -2521,24 +2521,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 }
             }
             break
-            case 'tiktok': case 'tiktoknowm': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(`https://anabotofc.herokuapp.com/api/download/tiktok2?url=${text}&apikey=AnaBot`)
-                let buttons = [
-                    {buttonId: `allmenu`, buttonText: {displayText: '📖List Menu'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.nowm },
-                    caption: `Download From ${text}`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 5
-                }
-                naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
   case 'tiktok': case 'tiktoknowm': {
 if (!text) throw 'Masukkan Query Link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
