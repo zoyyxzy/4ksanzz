@@ -2085,16 +2085,18 @@ if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.
 m.reply(mess.wait)
 let asly = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
 let buttonssyl = [
-{buttonId: `tiktokaudio ${text}`, buttonText: {displayText: 'AUDIO'}, type: 1}
+{buttonId: `ytmp3xxxx ${text}`, buttonText: {displayText: 'AUDIO'}, type: 1}
 ]
 let buttonMessagexx = {
 video: { url: asly.data.url },
-caption: `*Title:* ${asly.title}
-*Duration:* ${asly.duration}
-*Channel:* ${asly.channel}
-*Views:* ${asly.views}
-*Size:* ${asly.data.size}
-*Quality:* ${asly.data.quality}`,
+caption: `乂  *Y T - M P 4*
+
+*Title :* ${asly.title}
+*Duration :* ${asly.duration}
+*Channel :* ${asly.channel}
+*Views :* ${asly.views}
+*Size :* ${asly.data.size}
+*Quality :* ${asly.data.quality}`,
 footer: botname,
 buttons: buttonssyl,
 headerType: 4
