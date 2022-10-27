@@ -35,6 +35,7 @@ global.mess = {
     premime: 'Fitur Khusus Premium Kalo Mau Daftar Ketik Sewa',
     owner: 'Fitur Khusus Owner Bot',
     group: 'Fitur Digunakan Hanya Untuk Group!',
+    error: 'Error!!',   
     private: 'Fitur Digunakan Hanya Untuk Private Chat!',
     bot: 'Fitur Khusus Pengguna Nomor Bot',
     wait: 'Loading...',
