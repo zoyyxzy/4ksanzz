@@ -2252,9 +2252,9 @@ naze.sendMessage(m.chat, buttonMessage, { quoted: m })
 break      
      case 'mediafire': {
 if (!text) throw 'Masukkan Query Link!'
+if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) throw 'Invalid link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 5 // -5 limit    
-if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) throw `The link you provided is invalid`
 m.reply(mess.wait)	
 const baby1 = await mediafireDl(text)
 if (baby1[0].size.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(baby1))
