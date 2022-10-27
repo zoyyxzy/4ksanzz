@@ -19,11 +19,11 @@ global.APIKeys = {
 }
 
 // Other
-global.owner = ['6285380166282']
-global.ownernomer = "6285380166282"
-global.premium = ['6285380166282']
+global.owner = ['62887435045557']
+global.ownernomer = "62887435045557"
+global.premium = ['62887435045557']
 global.packname = 'Sticker  Kahfi-XD'
-global.author = 'Naze'
+global.author = 'Fadil Xd'
 global.botname = '𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗕𝗼𝘁'
 global.sessionName = 'nazedev'  //jangan diganti bro nanti error
 global.prefa = ['','!','.','#','&']
