@@ -134,7 +134,10 @@ module.exports = naze = async (naze, m, chatUpdate, store) => {
         const isMedia = /image|video|sticker|audio/.test(mime)
         const sender = m.isGroup ? (mek.key.participant ? mek.key.participant : mek.participant) : mek.key.remoteJid
      
-	 
+   //randoming function
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}	 
 	    //Fake
 	    const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "status@broadcast"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: thumb, surface: 200, message: '©Naze', orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 		const fdoc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {documentMessage: {title: '©Naze',jpegThumbnail: thumb}}}
