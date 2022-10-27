@@ -3848,7 +3848,7 @@ let alfamart = `6285380166282@s.whatsapp.net`
 let cBandwidth = await checkBandwidth()
 naze.sendMessage(m.chat, { react: { text: `📝`, key: m.key }})
 const ytta = ' *×*'  
-anu = `*${ucapan()} ${pushname}*
+anu = `*${ucapan()}  @${m.sender.split("@")[0]}*
 *Limit* : ${isPremium ? '♾Infinity' : `${db.data.users[m.sender].limit}`}
 
 Jika menemukan bug/error silahkan laporkan kepada owner
