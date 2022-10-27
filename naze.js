@@ -3564,11 +3564,42 @@ break
                 naze.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
             }
             break
-	        case 'fbdl': case 'fb': case 'facebook': {
-                if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                naze.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
+case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
+if (!text) throw 'Masukkan Query Link!'
+if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 5 // -5 limit    
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw 'Invalid link!'
+let bocil = require('@bochilteam/scraper')  
+bocil.facebookdlv3(`${text}`).then(async (data) => {                   
+let txt = `乂 *Facebook Downloader*\n\n`
+txt += `*Title :* ${data.title}\n`
+txt += `*Quality :* ${data.result[0].quality}\n`
+txt += `*Description:* ${data.description}\n`
+txt += `*URL :* ${text}\n\n`
+buf = await getBuffer(data.thumbnail)    
+naze.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m })         
+for (let i of data.result) {     
+naze.sendMessage(m.chat, { video: { url: i.url }, jpegThumbnail:buf, caption: `*Quality :* ${i.quality}`}, { quoted: m })
+}          
+}).catch((err) => {
+reply(mess.error)
+})
+}
+break
+
+case 'fbmp3': case 'facebookmp3': case 'facebookaudio': {
+if (!text) throw 'Masukkan Query Link!'
+
+if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+
+		db.data.users[m.sender].limit -= 5 // -5 limit    
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw 'Invalid link!'
+  let noh = require('@bochilteam/scraper')                
+  noh.savefrom(`${text}`).then(async (anu) => {  
+  naze.sendMessage(m.chat, { audio: { url: anu.url[0].url }, mimetype: 'audio/mp4' }, { quoted: m })      
+                }).catch((err) => {
+                    reply(mess.error)
+                })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
