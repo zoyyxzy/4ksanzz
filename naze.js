@@ -2950,7 +2950,7 @@ let alfamart = `6285380166282@s.whatsapp.net`
             break
   case 'menunya': case 'allmenu': case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?':
 let cBandwidth = await checkBandwidth()
-naze.sendMessage(from, { react: { text: `📝`, key: m.key }})
+naze.sendMessage(m.chat, { react: { text: `📝`, key: m.key }})
 const ytta = ' *×*'  
 anu = `*${ucapan()} ${pushname}*
 *Limit* : ${isPremium ? '♾Infinity' : `${db.data.users[m.sender].limit}`}
