@@ -2077,7 +2077,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
                 naze.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
-            break
+         break
+case 'ytmp4xxxx': case 'ytmp4': case 'ytvideo': {
+reply(mess.wait)	    
+let ytLink = await fetchJson('https://yt.nxr.my.id/yt2?url=' + args[0] + '&type=video')
+naze.sendMessage(m.chat, { video: { url: ytLink }, mimetype: 'video/mp4' }, { quoted: m })
+}
+break          
             case 'getvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
