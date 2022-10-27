@@ -3844,6 +3844,7 @@ Jika menemukan bug/error silahkan laporkan kepada owner
 *▸  Upload : ${cBandwidth.upload}*
 *▸  Download : ${cBandwidth.download}*
 *▸  Tanggal : ${date}*
+*▸  Active : ${runtime(process.uptime())}*
 
 *❐  G R O U P  M E N U*
 
