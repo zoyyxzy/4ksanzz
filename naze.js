@@ -19,7 +19,8 @@ const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
-
+const { mediafireDl } = require('./lib/mediafire.js')
+const textpro = require('./lib/textpro.js')
 const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
 const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
@@ -2098,6 +2099,25 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+     case 'mediafire': {
+if (!text) throw 'Masukkan Query Link!'
+if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 5 // -5 limit    
+if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) throw `The link you provided is invalid`
+m.reply(mess.wait)	
+const baby1 = await mediafireDl(text)
+if (baby1[0].size.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(baby1))
+const result4 = `
+乂  *M E D I A F I R E   D O W N L O A D*
+
+*Name* : ${baby1[0].nama}
+*Size* : ${baby1[0].size}
+*Mime* : ${baby1[0].mime}
+*Link* : ${baby1[0].link}\n\nꜱɪᴍᴩʟᴇ ᴡʜᴀᴛꜱᴀᴩᴩ ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ ғᴀᴅɪʟ`
+reply(`${result4}`)
+naze.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+}
+break       
 	    case 'couple': {
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -2603,7 +2623,7 @@ case 'sky':{
 
 case 'magma':{
 	 if (!q) throw `Example: ${prefix + command} Megawati`		
-     let anui = await fetchJson("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html",[`${q}`])
+     let anui = await textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
     naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
