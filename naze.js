@@ -149,6 +149,19 @@ return list[Math.floor(list.length * Math.random())]
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":`${pushname}`, "h": `Hmm`,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: 'Naze Dev',jpegThumbnail: thumb}}}
 		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': '𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗕𝗼𝘁', 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;Naze Dev,;;;\nFN:𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗕𝗼𝘁\nitem1.TEL;waid=6285875158363:6285875158363\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
+  const fkontk = {
+	"key": {
+    "participants":"0@s.whatsapp.net",
+		"fromMe": false,
+		"id": ""
+	},
+	"message": {
+		"contactMessage": {
+			"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${m.sender.split('@')[0]},;;;\nFN:${m.sender.split('@')[0]}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+		}
+	},
+	"participant": "0@s.whatsapp.net"
+}		
 	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": '©Naze',"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./image/naze.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 	//reply    
 const reply = m.reply
@@ -4261,12 +4274,13 @@ title: naze.user.name,
 body: "",
 mediaType: 1,
 renderLargerThumbnail: true , 
+showAdAttribution: true, 
 mediaUrl: "https://instagram.com", 
 thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: fkontk})
   break          
 case 'sound1':
 case 'sound2':
