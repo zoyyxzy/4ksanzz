@@ -2079,11 +2079,18 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
          break
 case 'ytmp4xxxx': case 'ytmp4': case 'ytvideo': {
-reply(mess.wait)	    
+if (!text) throw 'Masukkan Query Link!' 
+reply(mess.wait)	
 let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
-naze.sendMessage(m.chat, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
+let ytcaption = `乂  *Y T - P L A Y*
+
+◦  *Title* : ${anu.title}
+◦  *Size* : ${anu.data.size}
+◦  *Duration* : ${anu.duration}
+◦  *Bitrate* : ${anu.data.quality}`
+naze.sendMessage(m.chat, ytcaption, m, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
 }
-break          
+break  
             case 'getvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
