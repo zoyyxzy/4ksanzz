@@ -2252,7 +2252,7 @@ naze.sendMessage(m.chat, buttonMessage, { quoted: m })
 break      
      case 'mediafire': {
 if (!text) throw 'Masukkan Query Link!'
-if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) throw 'Invalid link!'
+if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply('Invalid link!')
 if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 5 // -5 limit    
 m.reply(mess.wait)	
