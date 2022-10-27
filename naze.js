@@ -2080,9 +2080,26 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
          break
 case 'ytmp4xxxx': case 'ytmp4': case 'ytvideo': {
 if (!text) throw 'Masukkan Query Link!'
-reply(mess.wait)
-let asly = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=audio`)
-naze.sendMessage(m.chat, { video: { url: asly.data.url }, mimetype: 'video/mp4' }, { quoted: m })
+if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 5 // -5 limit    
+m.reply(mess.wait)
+let asly = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
+let buttonssyl = [
+{buttonId: `tiktokaudio ${text}`, buttonText: {displayText: 'AUDIO'}, type: 1}
+]
+let buttonMessagexx = {
+video: { url: asly.data.url },
+caption: `*Title:* ${asly.title}
+*Duration:* ${asly.duration}
+*Channel:* ${asly.channel}
+*Views:* ${asly.views}
+*Size:* ${asly.data.size}
+*Quality:* ${asly.data.quality}`,
+footer: botname,
+buttons: buttonssyl,
+headerType: 4
+  }
+naze.sendMessage(m.chat, buttonMessagexx, { quoted: m })
 }
 break  
 case 'ytmp3xxxx': case 'ytmp3': case 'ytaudio': {
