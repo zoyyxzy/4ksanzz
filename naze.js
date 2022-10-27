@@ -2085,8 +2085,7 @@ let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
 let ytcaption = `乂  *Y T - V I D E O*
 
 ◦  *Title* : ${anu.title}
-◦  *Duration* : ${anu.duration}
-◦  *Bitrate* : ${anu.data.quality}`
+◦  *Duration* : ${anu.duration}`
 naze.sendMessage(m.chat, ytcaption, m, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
 }
 break  
