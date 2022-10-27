@@ -24,6 +24,7 @@ global.ownernomer = "6285380166282"
 global.premium = ['6285380166282']
 global.packname = 'Sticker  Kahfi-XD'
 global.author = 'Naze'
+global.botname = '𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗕𝗼𝘁'
 global.sessionName = 'nazedev'  //jangan diganti bro nanti error
 global.prefa = ['','!','.','#','&']
 global.sp = ''
