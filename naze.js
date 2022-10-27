@@ -2085,21 +2085,143 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 naze.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
             }
             break
-            case 'waifu': {
-            	m.reply(mess.wait)
-                anu = await fetchJson(`https://waifu.pics/api/sfw/waifu`)
-                buffer = await getBuffer(anu.url)
-                let buttons = [{buttonId: `waifu`, buttonText: {displayText: 'Next Image'}, type: 1},{buttonId: `simplemenu`, buttonText: {displayText: '⬅️Back'}, type: 1}]
-                let buttonMessage = {
-                    image: buffer,
-                    caption: `Random Waifu`,
-                    footer: nyoutube,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
+  	case 'neko':{
+ if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit     	  
+ nekosss = await axios.get(`https://api.waifu.pics/sfw/${command}`)
+var nbuttsss = [
+        {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
+        ]
+      let button1112ssMessages = {
+       image: {url:nekosss.data.url},
+       caption:  '*Jangan di pake ngocok om*',
+      footer: botname,
+      buttons: nbuttsss,
+      headerType: 4
+      }     
+await naze.sendMessage(m.chat, button1112ssMessages,{ quoted:m }).catch(err => {
+return('Error!')
+})
+}
+break          
+case 'megumin2':
+reply(mess.wait)						
+ud = await axios.get('https://waifu.pics/api/sfw/megumin')
+var wbutsss = [
+    {buttonId: `.megumin2`, buttonText: {displayText: `Next`}, type: 1},
+         ]
+      let buttonzMessage = {
+      image: {url:ud.data.url},
+       caption:  `Random megumin`,
+      footer: `${global.botname}`,
+          buttons: wbutsss,
+     headerType: 4
+                      }
+await naze.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
+     return('Error!')
+    })               
+break   
+case 'foxgirl':
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
+var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
+        ]
+      let button12ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Random foxgirl`,
+      footer: `${global.botname}`,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+await naze.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
+     throw('Error!')
+    })
+break   
+case 'waifu': {
+m.reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/sfw/waifu`)
+buffer = await getBuffer(anu.url)
+let buttons = [{buttonId: `waifu`, buttonText: {displayText: 'Next Image'}, type: 1},{buttonId: `simplemenu`, buttonText: {displayText: '⬅️Back'}, type: 1}]
+let buttonMessage = {
+image: buffer,
+caption: `Random Waifu`,
+footer: nyoutube,
+buttons: buttons,
+headerType: 4
+}
+naze.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
+case 'waifu2':{
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
+var wbuttsss = [
+        {buttonId: `${prefix + command}`, buttonText: {displayText: `>>`}, type: 1},
+        ]
+      let button112ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  'Random Waifu2',
+      footer: botname,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+await naze.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+throw('Error!')
+})
+}
+break
+case 'waifu3':
+reply(mess.wait)						
+ waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
+var wbuttsss = [
+        {buttonId: `.${command}`, buttonText: {displayText: `Next`}, type: 1},
+        ]
+      let button112ssMessages = {
+       image: {url:waifudd.data.url},
+       caption:  `Random Waifu3`,
+      footer: botname,
+      buttons: wbuttsss,
+      headerType: 4
+      }     
+await naze.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
+throw('Error!')
+})
+break
+  case 'awoo2':
+reply(mess.wait)						
+ waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
+ var wbuttsss = [
+    {buttonId: `.${command}`, buttonText: {displayText: `Next`}, type: 1},
+    ]
+  let button1Messages = {
+   image: {url:waifudd.data.url},
+   caption:  '*Sukses*',
+   footer: botname,
+  buttons: wbuttsss,
+  headerType: 2
+  }       
+await naze.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
+throw('Error!')
+})
+break          
+   case 'loli': case 'kakasih': case 'shota': case 'yotsuba': case 'shinomiya': case 'yumeko': case 'tejina': case 'chiho': case 'boruto': case 'kaori': case 'mikasa': case 'akiyama': case 'gremoriy': case 'isuzu': case 'shina': case 'kagura': case 'shinka': case 'eba': case 'elaina': case 'yuri': case 'erza': case 'hinata': case 'minato': case 'naruto': case 'sagiri': case 'nezuko': case 'riza': case 'ana': case 'deidara': case 'yuki': case 'asuna': case 'ayazawa': case 'chitoge': case 'emilia': case 'hestai': case 'inori': case 'itachi': case 'madara': case 'sakura': case 'sasuke': case 'tsunade': case 'onepiece': case 'kaneki': case 'megumin': case 'toukachan': case 'akira': case 'itori': case 'kurumi': case 'miku': case 'pokemon': {
+if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit    
+let buttons = [
+{buttonId: `${command}`, buttonText: {displayText: 'NEXT'}, type: 1}
+]
+let buttonMessage = {
+image: { url: `https://christian-id-api.herokuapp.com/api/wallpaper/${command}?apikey=IzumiBot` },
+caption: `Random ${command}`,
+footer: naze.user.name,
+buttons: buttons,
+headerType: 4
+}
+naze.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break      
      case 'mediafire': {
 if (!text) throw 'Masukkan Query Link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
@@ -3745,6 +3867,67 @@ ${ytta} ${prefix}devote
 ${ytta} ${prefix}upvote
 ${ytta} ${prefix}cekvote
 ${ytta} ${prefix}hapusvote
+
+*❐  A N I M E  M E N U* 
+
+${ytta} ${prefix}kakasih
+${ytta} ${prefix}shota
+${ytta} ${prefix}yotsuba
+${ytta} ${prefix}shinomiya
+${ytta} ${prefix}yumeko
+${ytta} ${prefix}tejina
+${ytta} ${prefix}chiho
+${ytta} ${prefix}boruto
+${ytta} ${prefix}kaori
+${ytta} ${prefix}mikasa
+${ytta} ${prefix}akiyama
+${ytta} ${prefix}gremoriy
+${ytta} ${prefix}isuzu
+${ytta} ${prefix}shina
+${ytta} ${prefix}kagura
+${ytta} ${prefix}shinka
+${ytta} ${prefix}eba
+${ytta} ${prefix}elaina
+${ytta} ${prefix}yuri
+${ytta} ${prefix}erza
+${ytta} ${prefix}naruto
+${ytta} ${prefix}hinata
+${ytta} ${prefix}minato
+${ytta} ${prefix}sagiri
+${ytta} ${prefix}nezuko
+${ytta} ${prefix}riza
+${ytta} ${prefix}ana
+${ytta} ${prefix}deidara
+${ytta} ${prefix}yuki
+${ytta} ${prefix}asuna
+${ytta} ${prefix}ayazawa
+${ytta} ${prefix}chitoge
+${ytta} ${prefix}emilia
+${ytta} ${prefix}hestai
+${ytta} ${prefix}inori
+${ytta} ${prefix}itachi
+${ytta} ${prefix}madara
+${ytta} ${prefix}sakura
+${ytta} ${prefix}sasuke
+${ytta} ${prefix}tsunade
+${ytta} ${prefix}onepiece
+${ytta} ${prefix}kaneki
+${ytta} ${prefix}megumin
+${ytta} ${prefix}megumin2
+${ytta} ${prefix}toukachan
+${ytta} ${prefix}akira
+${ytta} ${prefix}itori
+${ytta} ${prefix}kurumi
+${ytta} ${prefix}miku
+${ytta} ${prefix}pokemon
+${ytta} ${prefix}neko
+${ytta} ${prefix}waifu
+${ytta} ${prefix}waifu2
+${ytta} ${prefix}awoo2
+${ytta} ${prefix}shinobu
+${ytta} ${prefix}waifu3
+${ytta} ${prefix}foxgirl
+${ytta} ${prefix}loli
 
 *❐  W E B Z O N E  M E N U*
 
