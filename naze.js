@@ -3853,8 +3853,8 @@ anu = `*${ucapan()} ${pushname}*
 
 Jika menemukan bug/error silahkan laporkan kepada owner
 
-*▸  Total Hit* : ${jumlahcmd}
-*▸  Total Hit Today* : ${jumlahharian}
+*▸  Total Hit : ${jumlahcmd}*
+*▸  Total Hit Today : ${jumlahharian}*
 *▸  Upload : ${cBandwidth.upload}*
 *▸  Download : ${cBandwidth.download}*
 *▸  Tanggal : ${date}*
@@ -4281,7 +4281,7 @@ thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: fkontk})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: fakestatus})
   break          
 case 'sound1':
 case 'sound2':
