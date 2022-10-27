@@ -2549,7 +2549,7 @@ if (!text) throw 'Masukkan Query Link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 3) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 3 // -5 limit    
 let anu = await fetchJson(`https://malesin.xyz/tiktok?url=${text}`)
-naze.sendMessage(m.chat, { audio: { url: anu.video }, mimetype: 'audio/mpeg'}, { quoted: msg })
+naze.sendMessage(m.chat, { audio: { url: anu.video }, mimetype: 'audio/mpeg'}, { quoted: m })
 }
 break          
            /**case 'tiktokwm': case 'tiktokwatermark': {
