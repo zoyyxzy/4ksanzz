@@ -2083,10 +2083,9 @@ if (!text) throw 'Masukkan Query Link!'
 if (!isPremium && global.db.data.users[m.sender].limit < 4) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 4
 // -4 limit    
-reply(mess.wait)	
-let ytcaption = `乂  *Y T - V I D E O*`
+reply(mess.wait)
 let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
-naze.sendMessage(m.chat, ytcaption, m, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
+naze.sendMessage(m.chat, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
 }
 break  
 case 'ytmp3xxxx': case 'ytmp3': case 'ytaudio': {
@@ -2096,7 +2095,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 3) return m.reply(mess.
 // -3 limit    
 reply(mess.wait)	
 let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=audio`)
-naze.sendMessage(m.chat, ytcaption, m, { audio: { url: anu.data.url }, mimetype: 'audio/mpeg' }, { quoted: m })
+naze.sendMessage(m.chat, { audio: { url: anu.data.url }, mimetype: 'audio/mpeg' }, { quoted: m })
 }
 break  
             case 'getvideo': {
