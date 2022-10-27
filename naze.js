@@ -10,6 +10,7 @@ const axios = require('axios')
 const chalk = require('chalk')
 const yts = require('yt-search')
 const xfar = require('xfarr-api')
+const maker = require('mumaker')
 const google = require('google-it')
 const { exec, spawn, execSync } = require("child_process")
 const moment = require('moment-timezone')
@@ -2476,19 +2477,337 @@ break
                     let d = new Date(1970, month - 1, day)
                     return zodiak.find(([_,_d]) => d >= _d)[0]
                 }
-                let date = new Date(text)
-                if (date == 'Invalid Date') throw date
-                let d = new Date()
-                let [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
-                let birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+        let date = new Date(text)
+     if (date == 'Invalid Date') throw date
+let d = new Date()
+let [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
+let birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
 
-                let zodiac = await getZodiac(birth[1], birth[2])
+let zodiac = await getZodiac(birth[1], birth[2])
                 
-                let anu = await primbon.zodiak(zodiac)
+let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return m.reply(anu.message)
-                naze.sendText(m.chat, `⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+naze.sendText(m.chat, `⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
             }
             break
+case'glitch3':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case '3dbox':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
+    `${text}`,])
+.then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.catch((err) => console.log(err));
+break
+case 'waterdrop':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+ maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
+     `${text}`,])
+    .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .catch((err) => console.log(err));
+     break
+case 'lion2':
+if(!text) throw `Example: ${prefix + command} text`
+  reply(mess.wait)
+  maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
+      `${text}`,])
+     .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .catch((err) => console.log(err));
+     break
+case 'papercut':
+if(!text) throw `Example: ${prefix + command} text`
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
+`${text}`,])
+         .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .catch((err) => console.log(err));
+         break
+case 'transformer':
+if(!text) throw `Example: ${prefix + command} text`
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
+`${text}`,])
+.then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.catch((err) => console.log(err));
+break
+case 'harrypot':
+if(!text) throw `Example: ${prefix + command} text|text`
+       reply(mess.wait)
+       teks1 = q.split("|")[0]
+       teks2 = q.split("|")[1]
+       maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
+ `${teks1}`,`${teks2}`])
+ .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .catch((err) => console.log(err));
+ break
+case 'neondevil':
+if(!text) throw `Example: ${prefix + command} text`
+      reply(mess.wait)
+      maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
+`${text}`,])
+         .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .catch((err) => console.log(err));
+         break
+case '3dstone':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case '3davengers':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'thunder':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'window':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   case 'blackpinkneon':
+if(!text) throw `Example: ${prefix + command} text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'graffiti':
+   case 'grafiti':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'pornhub2':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'blackpink2':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'glitch':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'glitch2':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'glitch3':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case '3dspace':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'lion':
+if(!text) throw `Example: ${prefix + command} text|text`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case '3dneon':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'neon':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'greenneon':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'bokeh':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'holographic':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'bear':
+if (!text) throw `Example: ${prefix + command} Megawati|chan`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'wolf':
+if (!text) throw `Example: ${prefix + command} Megawati|chan`
+reply(mess.wait)
+teks1 = q.split("|")[0]
+teks2 = q.split("|")[1]
+maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
+    `${teks1}`,`${teks2}`])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'joker':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+case 'dropwater2':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+   case 'summertime':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'neonlight2':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'thewall':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+   
+case 'natural':
+ if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break 
+
+case 'carbon':
+   if (!m.isGroup) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if(!q) return reply(`Use ${prefix + command} text`)
+reply(mess.wait)
+maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break
+
+case 'pencil':
+if (!text) throw `Example: ${prefix + command} Megawati`
+reply(mess.wait)
+maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
+    `${text}`,])
+  .then((data) => naze.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .catch((err) => console.log(err));
+   break            
   case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas':
 case 'deepsea': case 'scifi': case 'rainbow2': case 'waterpipe': case 'spooky': 
 case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': 
@@ -2569,7 +2888,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.
      let anui = await textpro("https://textpro.me/horror-blood-text-effect-online-883.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
   case 'whitebear':{
@@ -2577,7 +2896,7 @@ if (!isPremium && global.db.data.users[m.sender].limit < 5) return m.reply(mess.
      let anui = await textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'thunder2':{
@@ -2585,7 +2904,7 @@ case 'thunder2':{
      let anui = await textpro("https://textpro.me/create-thunder-text-effect-online-881.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'blackpink':{
@@ -2593,7 +2912,7 @@ case 'blackpink':{
      let anui = await textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'neon':{
@@ -2601,7 +2920,7 @@ case 'neon':{
      let anui = await textpro("https://textpro.me/neon-light-text-effect-online-882.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'matrix2':{
@@ -2609,7 +2928,7 @@ case 'matrix2':{
      let anui = await textpro("https://textpro.me/matrix-style-text-effect-online-884.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sky':{
@@ -2617,7 +2936,7 @@ case 'sky':{
      let anui = await textpro("https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 
@@ -2634,7 +2953,7 @@ case 'sand':{
      let anui = await textpro("https://textpro.me/sand-writing-text-effect-online-990.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'pencil':{
@@ -2642,7 +2961,7 @@ case 'pencil':{
      let anui = await textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'graffiti':{
@@ -2650,7 +2969,7 @@ case 'graffiti':{
      let anui = await textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'metallic':{
@@ -2658,7 +2977,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'steel':{
@@ -2666,7 +2985,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/steel-text-effect-online-921.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'harrypotter':{
@@ -2674,7 +2993,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'underwater':{
@@ -2682,7 +3001,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/3d-underwater-text-effect-generator-online-1013.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'luxury':{
@@ -2690,7 +3009,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/3d-luxury-gold-text-effect-online-1003.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'glue2':{
@@ -2698,7 +3017,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'fabric':{
@@ -2706,7 +3025,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/fabric-text-effect-online-964.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'neonlight':{
@@ -2714,7 +3033,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/neon-light-glitch-text-generator-online-1063.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'lava':{
@@ -2722,7 +3041,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/lava-text-effect-online-914.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'toxic':{
@@ -2730,7 +3049,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/toxic-text-effect-online-901.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'ancient':{
@@ -2738,7 +3057,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'christmas2':{
@@ -2746,7 +3065,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/sparkles-merry-christmas-text-effect-1054.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sci_fi':{
@@ -2754,7 +3073,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'rainbow':{
@@ -2762,7 +3081,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
      let anui = await textpro("https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'classic':{
@@ -2770,7 +3089,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'watercolor2':{
@@ -2778,7 +3097,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'halloween2':{
@@ -2786,7 +3105,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'halloweenfire':{
@@ -2794,7 +3113,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
  let anui = await textpro("https://textpro.me/halloween-fire-text-effect-940.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'writing':{
@@ -2802,7 +3121,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/sand-writing-text-effect-online-990.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'foggy':{
@@ -2810,7 +3129,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'marvel':{
@@ -2818,7 +3137,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'skeleton2':{
@@ -2826,7 +3145,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sketch':{
@@ -2834,7 +3153,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'wonderful':{
@@ -2842,7 +3161,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'cool':{
@@ -2850,7 +3169,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'collwall':{
@@ -2858,7 +3177,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'multicolor2':{
@@ -2866,7 +3185,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'batman':{
@@ -2874,7 +3193,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'juice':{
@@ -2882,7 +3201,7 @@ if (!q) throw `Example: ${prefix + command} Megawati`
 let anui = await textpro("https://textpro.me/fruit-juice-text-effect-861.html",[`${q}`])
 reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'pornhub':{
@@ -2893,7 +3212,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-naze.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+naze.sendMessage(m.chat,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'retro':{
@@ -2904,7 +3223,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-naze.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+naze.sendMessage(m.chat,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case 'horror':{
@@ -2915,7 +3234,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-a-cinematic-horror-text-effect-1045.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-naze.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+naze.sendMessage(m.chat,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
 case '8bit':{
@@ -2927,7 +3246,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-naze.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+naze.sendMessage(m.chat,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break           
 //PEMBATAS=======================================
@@ -3764,7 +4083,7 @@ thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: m})
   break          
 case 'sound1':
 case 'sound2':
