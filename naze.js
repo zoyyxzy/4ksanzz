@@ -2091,12 +2091,12 @@ let buttonMessagexx = {
 video: { url: asly.data.url },
 caption: `乂  *Y T - M P 4*
 
-*Title :* ${asly.title}
-*Duration :* ${asly.duration}
-*Channel :* ${asly.channel}
-*Views :* ${asly.views}
-*Size :* ${asly.data.size}
-*Quality :* ${asly.data.quality}`,
+ *×  Title :* ${asly.title}
+ *×  Duration :* ${asly.duration}
+ *×  Channel :* ${asly.channel}
+ *×  Views :* ${asly.views}
+ *×  Size :* ${asly.data.size}
+ *×  Quality :* ${asly.data.quality}`,
 footer: botname,
 buttons: buttonssyl,
 headerType: 4
