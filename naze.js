@@ -2081,7 +2081,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 case 'ytmp4xxxx': case 'ytmp4': case 'ytvideo': {
 reply(mess.wait)	    
 let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
-naze.sendMessage(m.chat, { video: { url: anu.url }, mimetype: 'video/mp4' }, { quoted: m })
+naze.sendMessage(m.chat, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
 }
 break          
             case 'getvideo': {
