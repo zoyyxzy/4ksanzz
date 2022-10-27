@@ -2082,10 +2082,9 @@ case 'ytmp4xxxx': case 'ytmp4': case 'ytvideo': {
 if (!text) throw 'Masukkan Query Link!' 
 reply(mess.wait)	
 let anu = await fetchJson(`https://yt.nxr.my.id/yt2?url=${text}&type=video`)
-let ytcaption = `乂  *Y T - P L A Y*
+let ytcaption = `乂  *Y T - V I D E O*
 
 ◦  *Title* : ${anu.title}
-◦  *Size* : ${anu.data.size}
 ◦  *Duration* : ${anu.duration}
 ◦  *Bitrate* : ${anu.data.quality}`
 naze.sendMessage(m.chat, ytcaption, m, { video: { url: anu.data.url }, mimetype: 'video/mp4' }, { quoted: m })
