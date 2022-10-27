@@ -2606,7 +2606,7 @@ case 'magma':{
      let anui = await fetchJson("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html",[`${q}`])
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    naze.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    naze.sendMessage(m.chat, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
 }
    break
 case 'sand':{
@@ -3507,7 +3507,7 @@ ${ytta} ${prefix}demon
 ${ytta} ${prefix}sparklechristmas
 ${ytta} ${prefix}christmas
 ${ytta} ${prefix}3dchristmas
-${ytta} ${ytta} ${prefix}3dbox
+${ytta} ${prefix}3dbox
 ${ytta} ${prefix}waterdrop
 ${ytta} ${prefix}lion2
 ${ytta} ${prefix}papercut
