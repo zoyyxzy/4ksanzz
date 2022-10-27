@@ -2948,11 +2948,8 @@ let alfamart = `6285380166282@s.whatsapp.net`
                     await naze.sendButtonText(m.chat, buttons, jawab, naze.user.name, m, {mentions: ments})
             }
             break
-  case 'menunya': case 'allmenu': case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': 
-if (!m.isGroup) return reply(mess.ban) 
-if (isBanChat) return reply(mess.banChat)
+  case 'menunya': case 'allmenu': case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?':
 let cBandwidth = await checkBandwidth()
-
 naze.sendMessage(from, { react: { text: `📝`, key: m.key }})
 const ytta = ' *×*'  
 anu = `*${ucapan()} ${pushname}*
@@ -3220,7 +3217,7 @@ thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: m})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
   break          
 case 'sound1':
 case 'sound2':
