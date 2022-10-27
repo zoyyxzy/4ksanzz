@@ -2964,7 +2964,7 @@ Jika menemukan bug/error silahkan laporkan kepada owner
 *▸  Total Hit Today* : ${jumlahharian}
 *▸  Upload : ${cBandwidth.upload}*
 *▸  Download : ${cBandwidth.download}*
-*▸  Tanggal : ${date}
+*▸  Tanggal : ${date}*
 
 *❐  G R O U P  M E N U*
 
