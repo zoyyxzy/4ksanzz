@@ -2030,7 +2030,7 @@ teks += `*×  No :* ${no++}
 naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
 break
-        case 'google': {
+       case 'google': {
                 if (!text) throw `Example : ${prefix + command} fatih arridho`
                 let google = require('google-it')
                 google({'query': text}).then(res => {
