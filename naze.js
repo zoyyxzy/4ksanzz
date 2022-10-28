@@ -250,8 +250,29 @@ const replay = m.reply
         if (!naze.public) {
             if (!m.key.fromMe) return
         }
-        if (m.message) {
-            naze.readMessages([m.key])
+     //autoread gc only
+  if (global.autoReadGc) {
+  if (m.isGroup) { naze.sendReadReceipt(m.chat, m.sender, [m.key.id]) }
+}
+//autoreader gc and pm
+if (global.autoreadpmngc) {
+if (command) {
+await naze.sendPresenceUpdate('composing', m.chat)
+naze.sendReadReceipt(m.chat, m.sender, [m.key.id])}
+}
+  //auto recording all
+    if (global.autoRecord) { if (m.chat) { naze.sendPresenceUpdate('recording', m.chat) }
+}
+//autotyper all
+  if (global.autoTyping) { if (m.chat) { naze.sendPresenceUpdate('composing', m.chat) }
+}
+//auto available all
+  if (global.available) { if (m.chat) { naze.sendPresenceUpdate('available', m.chat) }
+  }
+     
+  //Push Message To Console && Auto Read\\
+    if (m.message) {
+   console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
         }
 
 	// reset limit every 12 hours
