@@ -2017,15 +2017,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 let teks = '乂  *Y T - S E A R C H*\n\n*Result From* '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-teks += ` *×  No :* ${no++}
- *×  Type :* ${i.type}
- *×  Video ID :* ${i.videoId}
- *×  Title :* ${i.title}
- *×  Views :* ${i.views}
- *×  Duration :* ${i.timestamp}
- *×  Upload At :* ${i.ago}
- *×  Author :* ${i.author.name}
- *×  Url :* ${i.url}\n\n*─────────────────*\n\n`
+teks += `*×  No :* ${no++}
+*×  Type :* ${i.type}
+*×  Video ID :* ${i.videoId}
+*×  Title :* ${i.title}
+*×  Views :* ${i.views}
+*×  Duration :* ${i.timestamp}
+*×  Upload At :* ${i.ago}
+*×  Author :* ${i.author.name}
+*×  Url :* ${i.url}\n\n*─────────────────*\n\n`
 }
 naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
@@ -2077,16 +2077,16 @@ break
                     image: { url: anu.thumbnail },
                     caption: `乂  *Y T - P L A Y*         
                     
- *×  Title :* ${anu.title}
- *×  Ext :* Search
- *×  ID :* ${anu.videoId}
- *×  Duration :* ${anu.timestamp}
- *×  Viewers :* ${anu.views}
- *×  Upload :* ${anu.ago}
- *×  Author :* ${anu.author.name}
- *×  Channel :* ${anu.author.url}
- *×  Description :* ${anu.description}
- *×  Url :* ${anu.url}`,
+*×  Title :* ${anu.title}
+*×  Ext :* Search
+*×  ID :* ${anu.videoId}
+*×  Duration :* ${anu.timestamp}
+*×  Viewers :* ${anu.views}
+*×  Upload :* ${anu.ago}
+*×  Author :* ${anu.author.name}
+*×  Channel :* ${anu.author.url}
+*×  Description :* ${anu.description}
+*×  Url :* ${anu.url}`,
 footer: naze.user.name,
 buttons: buttons,
 headerType: 4
