@@ -2086,13 +2086,13 @@ break
  *×  Channel :* ${anu.author.url}
  *×  Description :* ${anu.description}
  *×  Url :* ${anu.url}`,
-                    footer: naze.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
+footer: naze.user.name,
+buttons: buttons,
+headerType: 4
+}
+naze.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
 	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
