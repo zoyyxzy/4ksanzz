@@ -2014,18 +2014,18 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let teks = '乂  *Y T - S E A R C H*\n\n*Result From* '+text+'\n\n'
+                let teks = '乂  *YT-SEARCH*\n\n*Result From* '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
 teks += `*×  No :* ${no++}
-*×  Type :* ${i.type}
-*×  Video ID :* ${i.videoId}
-*×  Title :* ${i.title}
-*×  Views :* ${i.views}
-*×  Duration :* ${i.timestamp}
-*×  Upload At :* ${i.ago}
-*×  Author :* ${i.author.name}
-*×  Url :* ${i.url}\n\n*─────────────────*\n\n`
+ *×  Type :* ${i.type}
+ *×  Video ID :* ${i.videoId}
+ *×  Title :* ${i.title}
+ *×  Views :* ${i.views}
+ *×  Duration :* ${i.timestamp}
+ *×  Upload At :* ${i.ago}
+ *×  Author :* ${i.author.name}
+ *×  Url :* ${i.url}\n\n*─────────────────*\n\n`
 }
 naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
@@ -2075,25 +2075,24 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: `乂  *Y T - P L A Y*         
-                    
-*×  Title :* ${anu.title}
-*×  Ext :* Search
-*×  ID :* ${anu.videoId}
-*×  Duration :* ${anu.timestamp}
-*×  Viewers :* ${anu.views}
-*×  Upload :* ${anu.ago}
-*×  Author :* ${anu.author.name}
-*×  Channel :* ${anu.author.url}
-*×  Description :* ${anu.description}
-*×  Url :* ${anu.url}`,
-footer: naze.user.name,
-buttons: buttons,
-headerType: 4
-}
-naze.sendMessage(m.chat, buttonMessage, { quoted: m })
-}
-break
+                    caption: `乂  *YT-PLAY*                  
+ *×  Title :* ${anu.title}
+ *×  Ext :* Search
+ *×  ID :* ${anu.videoId}
+ *×  Duration :* ${anu.timestamp}
+ *×  Viewers :* ${anu.views}
+ *×  Upload :* ${anu.ago}
+ *×  Author :* ${anu.author.name}
+ *×  Channel :* ${anu.author.url}
+ *×  Description :* ${anu.description}
+ *×  Url :* ${anu.url}`,
+                    footer: naze.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                naze.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
 	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
@@ -4355,13 +4354,13 @@ let d3  = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 let td = `${pickRandom([d1,d2,d3])}`
 let buttonMessage = {
 document: fs.readFileSync('./image/naze.jpg'),
-fileName: 'ꜱɪᴍᴩʟᴇ ᴡʜᴀᴛꜱᴀᴩᴩ ʙᴏᴛ',
+fileName: botname,
 mimetype: td,
 mentions: [m.sender],
 fileLength: 99900000, //fake size by hyzer:v
 pageCount: 100000, // berapa halaman
 caption: anu,
-footer: naze.user.name,
+footer: 'ꜱɪᴍᴩʟᴇ ᴡʜᴀᴛꜱᴀᴩᴩ ʙᴏᴛ',
 buttons: butts,
 headerType: 4,
 contextInfo:{externalAdReply:{
@@ -4375,7 +4374,7 @@ thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: m})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: fkontk})
   break          
 case 'sound1':
 case 'sound2':
