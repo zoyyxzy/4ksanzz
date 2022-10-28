@@ -2014,14 +2014,22 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
+                let teks = '乂  *YT-SEARCH*\n\n*Result From* '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `⭔ No : ${no++}\n⭔ Type : ${i.type}\n⭔ Video ID : ${i.videoId}\n⭔ Title : ${i.title}\n⭔ Views : ${i.views}\n⭔ Duration : ${i.timestamp}\n⭔ Upload At : ${i.ago}\n⭔ Author : ${i.author.name}\n⭔ Url : ${i.url}\n\n─────────────────\n\n`
-                }
-                naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
-            }
-            break
+teks += `*×  No :* ${no++}
+ *×  Type :* ${i.type}
+ *×  Video ID :* ${i.videoId}
+ *×  Title :* ${i.title}
+ *×  Views :* ${i.views}
+ *×  Duration :* ${i.timestamp}
+ *×  Upload At :* ${i.ago}
+ *×  Author :* ${i.author.name}
+ *×  Url :* ${i.url}\n\n*─────────────────*\n\n`
+}
+naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+}
+break
         case 'google': {
                 if (!text) throw `Example : ${prefix + command} fatih arridho`
                 let google = require('google-it')
@@ -2067,17 +2075,17 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: `
-⭔ Title : ${anu.title}
-⭔ Ext : Search
-⭔ ID : ${anu.videoId}
-⭔ Duration : ${anu.timestamp}
-⭔ Viewers : ${anu.views}
-⭔ Upload At : ${anu.ago}
-⭔ Author : ${anu.author.name}
-⭔ Channel : ${anu.author.url}
-⭔ Description : ${anu.description}
-⭔ Url : ${anu.url}`,
+                    caption: `乂  *YT-PLAY*                  
+ *×  Title :* ${anu.title}
+ *×  Ext :* Search
+ *×  ID :* ${anu.videoId}
+ *×  Duration :* ${anu.timestamp}
+ *×  Viewers :* ${anu.views}
+ *×  Upload :* ${anu.ago}
+ *×  Author :* ${anu.author.name}
+ *×  Channel :* ${anu.author.url}
+ *×  Description :* ${anu.description}
+ *×  Url :* ${anu.url}`,
                     footer: naze.user.name,
                     buttons: buttons,
                     headerType: 4
