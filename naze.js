@@ -2011,12 +2011,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
 	    case 'yts': case 'ytsearch': {
-                if (!text) throw `Example : ${prefix + command} story wa anime`
-                let yts = require("yt-search")
-                let search = await yts(text)
-                let teks = '乂  *Y T - S E A R C H*\n\n*Result From* '+text+'\n\n'
-                let no = 1
-                for (let i of search.all) {
+  if (!text) throw `Example : ${prefix + command} story wa anime`
+  if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit                  
+         let yts = require("yt-search")
+         let search = await yts(text)
+         let teks = '乂  *Y T - S E A R C H*\n\n*Result From* '+text+'\n\n'
+        let no = 1
+        for (let i of search.all) {
 teks += `*×  No :* ${no++}
 *×  Type :* ${i.type}
 *×  Video ID :* ${i.videoId}
@@ -2032,6 +2035,9 @@ naze.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: te
 break
        case 'google': {
                 if (!text) throw `Example : ${prefix + command} fatih arridho`
+   if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit                 
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
@@ -2046,6 +2052,9 @@ break
                 break
         case 'gimage': {
        if (!text) throw `Example : ${prefix + command} kaori cicak`
+       if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit    
         anu = await fetchJson(`https://api.akuari.my.id/search/googleimage?query=${text}`)
         n = anu.result
         images = n[Math.floor(Math.random() * n.length)]
@@ -2155,6 +2164,9 @@ break
             }
             break
             case 'pinterest': {
+       if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit           
                 m.reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
@@ -2319,6 +2331,9 @@ naze.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0
 }
 break       
 	    case 'couple': {
+	  if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit        
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
@@ -2360,7 +2375,10 @@ break
             break
             case 'gcsearch': {
               if (!text) throw 'Masukkan Query Title'
-                anu = await fetchJson(`https://api.akuari.my.id/search/carigc?query=${text}`)
+       if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit           
+      anu = await fetchJson(`https://api.akuari.my.id/search/carigc?query=${text}`)
                 n = anu.result
                 result = n[Math.floor(Math.random() * n.length)]
                 let jwbn = `*Nama : ${result.nama}\n*Link : ${result.link}*`
@@ -2369,7 +2387,10 @@ break
             }
             break
             case 'wikimedia': {
-                if (!text) throw 'Masukkan Query Title'
+   if (!text) throw 'Masukkan Query Title'
+   if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit                 
 		let { wikimedia } = require('./lib/scraper')
                 anu = await wikimedia(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2404,6 +2425,9 @@ break
             
 //Pembatas========================================
             case 'quotesanime': case 'quoteanime': {
+   if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit               
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2420,7 +2444,10 @@ break
             }
             break
 	        case 'motivasi': {
-                let anu = await fetchJson(`https://kocakz.herokuapp.com/api/random/text/quotes`)
+	      if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+		db.data.users[m.sender].limit -= 2
+// -2 limit        
+         let anu = await fetchJson(`https://kocakz.herokuapp.com/api/random/text/quotes`)
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: 'Next'}, type: 1}
                 ]
