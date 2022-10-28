@@ -4375,7 +4375,7 @@ thumbnail: fs.readFileSync("./image/logo.jpg"),
 sourceUrl: "https://chat.whatsapp.com/CSM5iUazCEX5v7klLjzh3i"
 }}
 }
- naze.sendMessage(m.chat, buttonMessage, {quoted: fkontk})
+ naze.sendMessage(m.chat, buttonMessage, {quoted: m})
   break          
 case 'sound1':
 case 'sound2':
