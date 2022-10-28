@@ -2014,10 +2014,10 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let teks = '乂  *YT-SEARCH*\n\n*Result From* '+text+'\n\n'
+                let teks = '乂  *Y T - S E A R C H*\n\n*Result From* '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-teks += `*×  No :* ${no++}
+teks += ` *×  No :* ${no++}
  *×  Type :* ${i.type}
  *×  Video ID :* ${i.videoId}
  *×  Title :* ${i.title}
@@ -2075,7 +2075,8 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: `乂  *YT-PLAY*                  
+                    caption: `乂  *Y T - P L A Y*         
+                    
  *×  Title :* ${anu.title}
  *×  Ext :* Search
  *×  ID :* ${anu.videoId}
