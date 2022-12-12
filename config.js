@@ -25,12 +25,12 @@ global.autoRecord = false //auto recording (true to on, false to off)
 global.available = true //auto available (true to on, false to off)
 
 // Other
-global.owner = ['62887435045557']
-global.ownernomer = "62887435045557"
+global.owner = ['831']
+global.ownernomer = '831 ko'
 global.premium = ['62887435045557']
-global.packname = 'Sticker  Kahfi-XD'
-global.author = 'Fadil Xd'
-global.botname = '𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗕𝗼𝘁'
+global.packname =xx
+global.author =xx abc
+global.botname = xxi bot
 global.sessionName = 'nazedev'  //jangan diganti bro nanti error
 global.prefa = ['','!','.','#','&']
 global.sp = ''
